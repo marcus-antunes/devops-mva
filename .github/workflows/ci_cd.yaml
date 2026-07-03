@@ -12,7 +12,7 @@
         - name: Checkout
           uses: actions/checkout@v4
         - name: Lista dir
-          runs: ls -la
+          run: ls -la
         - name: Olá, Professor!
           run: echo "Olá, Professor!"
         - name: Sleep
@@ -20,7 +20,7 @@
         - name: Olá, Aluno!
           run: echo "Olá, Aluno!"
     estagio02:
-      needs: estagio01
+      needs: integracao-continua
       runs-on: ubuntu-latest
       steps:
         - name: "Sleep"
