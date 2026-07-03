@@ -1,4 +1,5 @@
 from flask import Flask, render_template
+from flask_migrate import Migrate
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
 from sqlalchemy import Integer, String
 from datetime import datetime
@@ -10,6 +11,8 @@ BD = SQLAlchemy(model_class=BaseModel)
 APP = Flask(__name__)
 APP.config['SQLALCHEMY_DATABASE_URI'] = CAMINHO_BD
 BD.init_app(APP)
+
+migrate = Migrate(APP, BD)
 
 class Livro(BD.Model):
     __tablename__ = 'livro'
