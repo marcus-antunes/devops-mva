@@ -33,8 +33,18 @@ def index():
 
 @APP.route("/livros", methods=['GET', 'POST'])
 def livros():
-    livros = [i[0] for i in BD.session.execute(BD.select(Livro)).all()]  # ← i[0]
-    print(livros)
+    
+    #if Livro.query.count() == 0:
+    #    BD.session.add(Livro(
+    #        titulo="1984",
+    #        autor="George Orwell",
+    #        issn="1234",
+    #        data_publicacao=datetime.now(),
+    #        qtde_paginas=320
+    #    ))
+    #    BD.session.commit()
+    
+    livros = Livro.query.all()
     return render_template('livros.html', livros=livros)
 
 if __name__ == '__main__':
