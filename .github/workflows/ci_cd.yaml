@@ -7,8 +7,12 @@
     estagio01:
       runs-on: ubuntu-latest
       steps:
-        - name: Olá, mundo!
+        - name: Olá, Professor!
           run: echo "Olá, Professor!"
+        - name: Sleep
+          run: sleep 1
+        - name: Olá, Aluno!
+          run: echo "Olá, Aluno!"
     estagio02:
       needs: estagio01
       runs-on: ubuntu-latest
