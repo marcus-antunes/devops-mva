@@ -2,7 +2,8 @@
 
   on:
     workflow_dispatch:
-    push: [main]
+    push:
+      [main]
 
   jobs:
     integracao-continua:
