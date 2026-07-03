@@ -46,7 +46,7 @@
         - name: Configurar Buildx
           uses: docker/setup-buildx-action@v4
         - name: Build e Push
-          uses: docker/build-and-push-action@v7
+          uses: docker/build-push-action@v7
           with:
             context: .
             push: true
