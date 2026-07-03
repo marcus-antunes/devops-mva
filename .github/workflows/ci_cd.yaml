@@ -46,11 +46,11 @@
         - name: Configurar Buildx
           uses: docker/setup-buildx-action@v4
         - name: Build e Push
-          uses: docker/build-and-push@v7
+          uses: docker/build-and-push-action@v7
           with:
             context: .
             push: true
-            tag: ${{ vars.DOCKER_USERNAME }}/marcus-vinicius-antunes:27-06-26
+            tags: ${{ vars.DOCKER_USERNAME }}/marcus-vinicius-antunes:27-06-26
     estagio02:
       needs: entrega-continua
       runs-on: ubuntu-latest
