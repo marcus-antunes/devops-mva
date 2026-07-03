@@ -47,6 +47,24 @@ def livros():
     livros = Livro.query.all()
     return render_template('livros.html', livros=livros)
 
+@APP.route("/criar_livro", methods=['POST'])
+def criar_livro():
+    req = request.get_json()
+    print (req)
+    livro = Livro(
+        titulo=req['titulo'],
+        autor=req['autor'],
+        data_publicacao=datetime.now(),
+        qtde_paginas=0,
+        issn=""
+        )
+    BD.session.add(livro)
+    BD.session.commit()
+    return "Livro criado com Sucesso!"
+
+
+
+
 if __name__ == '__main__':
     with APP.app_context():
         BD.create_all()
