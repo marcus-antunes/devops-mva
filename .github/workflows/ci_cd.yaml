@@ -2,11 +2,16 @@
 
   on:
     workflow_dispatch:
+    push: [main]
 
   jobs:
-    estagio01:
+    integracao-continua:
       runs-on: ubuntu-latest
       steps:
+        - name: Checkout
+          uses: actions/checkout@v4
+        - name: Lista dir
+          runs: ls -la
         - name: Olá, Professor!
           run: echo "Olá, Professor!"
         - name: Sleep
