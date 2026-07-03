@@ -9,3 +9,14 @@
       steps:
         - name: Olá, mundo!
           run: echo "Olá, Professor!"
+    estagio02:
+      runs-on: ubuntu-latest
+      steps:
+        - name: "Sleep"
+          run: sleep 5
+    estagio03:
+      runs-on: ubuntu-latest
+      steps:
+        - name: "Sleep"
+          run: sleep 2
+    
