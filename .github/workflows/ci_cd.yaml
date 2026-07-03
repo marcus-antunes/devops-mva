@@ -10,11 +10,13 @@
         - name: Olá, mundo!
           run: echo "Olá, Professor!"
     estagio02:
+      needs: estagio01
       runs-on: ubuntu-latest
       steps:
         - name: "Sleep"
           run: sleep 5
     estagio03:
+      needs: estagio02
       runs-on: ubuntu-latest
       steps:
         - name: "Sleep"
